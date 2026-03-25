@@ -1,19 +1,19 @@
-import java.util.LinkedList;
-import java.util.LinkedHashSet;
+import java.util.HashMap;
+import java.util.Map;
 
 public class TrainConsistManagement {
     public static void main(String[] args) {
 
         System.out.println("=== Train Consist Management App ===");
 
-        LinkedHashSet<String> train = new LinkedHashSet<>();
+        HashMap<String, Integer> capacityMap = new HashMap<>();
 
-        train.add("Engine");
-        train.add("Sleeper");
-        train.add("Cargo");
-        train.add("Guard");
-        train.add("Sleeper");
+        capacityMap.put("Sleeper", 72);
+        capacityMap.put("AC Chair", 60);
+        capacityMap.put("First Class", 24);
 
-        System.out.println("Final Train Formation: " + train);
+        for (Map.Entry<String, Integer> entry : capacityMap.entrySet()) {
+            System.out.println(entry.getKey() + " -> " + entry.getValue());
+        }
     }
 }
